@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # App Project
-    'apps.MedicalImageApp',
+    'app.MedicalImageApp',
 ]
 
 MIDDLEWARE = [
