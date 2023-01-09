@@ -40,7 +40,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    # App Project
+    # packages
+    'crispy_forms',
+
+    # Project App
     'app.MedicalImageApp',
 ]
 
@@ -130,7 +133,7 @@ STATICFILES_DIRS = (
 MEDIA_ROOT = MEDIA_DIR
 MEIDA_URL = '/media/'
 
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
+CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
