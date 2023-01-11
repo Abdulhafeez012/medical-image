@@ -1,3 +1,7 @@
 from django.contrib import admin
+from app.MedicalImageApp.models import *
 
-# Register your models here.
+admin.site.register(UserInformation)
+admin.site.register(Patient)
+admin.site.register(Doctor)
+admin.site.register(MedicalImage)

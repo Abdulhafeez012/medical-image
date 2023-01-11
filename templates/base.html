@@ -1,11 +1,34 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <!----CSS Bootstrap------>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+    <!----JS Bootstrap------------------>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+            crossorigin="anonymous"></script>
+
+    <!------link css file-------->
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
     <title>Medical Image WebSite</title>
-    <link rel="icon" href="./media/favicon.ico">
 </head>
 <body>
+{% if 'login' in request.path %}
+    <div class="container d-flex justify-content-center login-block pt-5">
+        {% block login %}
+
+        {% endblock %}
+    </div>
+{% else %}
+    <nav class="nav">
+        <img src="../staticfiles/media/doctor.svg" alt="photo" class="rounded-circle image">
+        <a class="nav-link active" aria-current="page" href="#">Active</a>
+    </nav>
+{% endif %}
 
 </body>
 </html>
