@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load crispy_forms_filters %}
+{% load static %}
+{% block add_account %}
+    <div class="Container">
+        <div class="header">
+            <img src="{% static 'img/AdminProfile.png' %}" alt="profile">
+            <div class="PageTitle">Add Account Page</div>
+        </div>
+        <form method="POST">
+            {% csrf_token %}
+            {{ user_form|crispy }}
+            {{ form|crispy:"bootstrap5" }}
+            <input class="SubmitButton" type="submit" value="Add Record">
+        </form>
+    </div>
+{% endblock %}

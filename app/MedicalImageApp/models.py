@@ -10,6 +10,12 @@ class UserInformation(models.Model):
         (MALE, 'male'),
         (FEMALE, 'female')
     ]
+    DOCTOR = 'DOCTOR'
+    PATIENT = 'PATIENT'
+    status_choices = [
+        (DOCTOR, 'doctor'),
+        (PATIENT, 'patient')
+    ]
     user = models.OneToOneField(
         User,
         on_delete=models.CASCADE
@@ -40,6 +46,15 @@ class UserInformation(models.Model):
         blank=False,
         help_text='Set Your Date of Birth'
     )
+    user_type = models.CharField(
+        max_length=20,
+        choices=status_choices,
+        null=True,
+        blank=True
+    )
+
+    def __str__(self):
+        return self.user.username
 
 
 class Doctor(models.Model):
@@ -53,6 +68,9 @@ class Doctor(models.Model):
         blank=True,
         help_text='max character is approve is 100 character, be careful '
     )
+
+    def __str__(self):
+        return "Dr. " + self.user.first_name
 
 
 class Patient(models.Model):
@@ -77,6 +95,9 @@ class Patient(models.Model):
         blank=False,
     )
 
+    def __str__(self):
+        return self.user.first_name
+
 
 class MedicalImage(models.Model):
     patient = models.ForeignKey(
@@ -86,28 +107,25 @@ class MedicalImage(models.Model):
     medical_image = models.ImageField(
         verbose_name='Medical Image of the patient',
         name="Medical Image",
-        width_field=100,
-        height_field=100,
-        upload_to='medical_image',
+        upload_to='medical_image_media',
         null=True,
         blank=True
     )
-    cypher = models.JSONField(
-        verbose_name="cypher",
-        name="Cypher",
-        default="",
-        null=False,
-        blank=False
-    )
-    h_cypher = models.JSONField(
+    hash_cypher = models.JSONField(
         verbose_name='hash of cypher',
         name='cipher + Hash',
-        default="",
-        null=False,
-        blank=False
+        default={
+            "Hash value": " ",
+        },
+        null=True,
+        blank=True
     )
     Description = models.TextField(
         max_length=500,
         null=True,
         blank=True,
     )
+
+    def __str__(self):
+        return "Medical Image For " + self.patient.user.first_name
+

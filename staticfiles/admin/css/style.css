@@ -1,0 +1,193 @@
+body {
+	margin: 0px;
+	font-family: "DIN Alternate";
+	text-decoration: none;
+}
+
+.LoginPic {
+	margin: 0 auto;
+	width: 112px;
+	margin-top: 80px;
+	font-size: 20px;
+	text-align: center;
+	margin-bottom: 60px;
+}
+
+footer {
+	position:fixed;
+	height: 45px;
+	bottom: 0px;
+	width: 100vw;
+	background: #004D6F;
+}
+
+.Inputs {
+	text-align: center;
+}
+
+.LoginInput {
+	display: block;
+	min-width: 50%;
+	height: 50px;
+	border: solid 1px #9F9E9D;
+	margin: 0 auto;
+	margin-bottom: 20px;
+	padding: 0px 30px;
+	font-size: large;
+	border-radius: 10px;
+}
+
+.SubmitButton {
+	display: block;
+	height: 50px;
+	min-width: 30%;
+	background: #0090CD;
+	border-radius: 10px;
+	border: none;
+	color: white;
+	font-size: large;
+	margin: 50px auto 0px auto;
+}
+
+.SubmitButton:hover {
+	background-color: #004D6F;
+}
+
+.Container {
+	padding: 30px 30px;
+	font-size: 20px;
+	text-align: center;
+	margin-bottom: 60px;
+	text-align: center;
+}
+
+.header {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 10px;
+}
+
+.header > img{
+	height: 90px;
+}
+
+.HeaderButton {
+	min-width: 20%;
+	height: 50px;
+	background: #0090CD;
+	padding: 0px 30px;
+	font-size: large;
+	border-radius: 10px;
+	color: white;
+	display: flex;
+	align-items: center;
+	margin: 10px 0px;
+	text-align: center;
+	justify-content: center;
+    color: white;
+}
+.HeaderButton > a{
+    color: white;
+    text-decoration: none;
+
+}
+.HeaderButton:hover{
+	background-color: #004D6F;
+}
+
+.ListItem {
+	display: flex;
+	align-items: center;
+	width: 60%;
+	height: 60px;
+	border: solid 1px #9F9E9D;
+	margin: 0 auto;
+	margin-bottom: 20px;
+	padding: 0px 30px;
+	font-size: large;
+	border-radius: 10px;
+	background-color: white;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.ListItem:hover {
+	background-color: rgb(235, 231, 231);
+}
+
+.listTitle {
+	margin-bottom: 40px;
+}
+
+.PageTitle {
+	font-size: x-large;
+	border-bottom: solid 2px #0090CD;
+	color: #004D6F;
+}
+
+.Select {
+	width: 65%;
+	padding: 0px 30px;
+	height: 60px;
+	font-size: large;
+	border: solid 1px #9F9E9D;
+	border-radius: 10px;
+	background-color: white;
+	margin-bottom: 20px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.Input {
+	display: block;
+	width: 65%;
+	height: 60px;
+	border: solid 1px #9F9E9D;
+	margin: 0 auto;
+	margin-bottom: 20px;
+	padding: 0px 30px;
+	font-size: large;
+	border-radius: 10px;
+	background-color: white;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.textarea {
+	height: 150px;
+	padding: 20px 30px;
+}
+
+.Upload {
+	text-align: center;
+	width: 60%;
+	height: 120px;
+	padding: 30px;
+}
+
+.Upload>div {
+	margin-bottom: 30px;
+	text-align: center;
+}
+
+.Upload>div>img {
+	height: 65;
+}
+
+.Upload>input {
+	text-align: center;
+	margin: 0px auto;
+}
+.NoHover:hover{
+	background-color: white;
+}
+
+.MedicalContainer{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 300px;
+	border: solid 3px #0090CD;
+}
+.MedicalContainer > img{
+	height: 280px;
+}

@@ -18,7 +18,7 @@ from crispy_bootstrap5 import bootstrap5
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
-MEDIA_DIR = os.path.join(BASE_DIR, 'staticfiles/media')
+MEDIA_DIR = os.path.join(BASE_DIR, 'staticfiles/admin/media')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
@@ -45,8 +45,8 @@ INSTALLED_APPS = [
     # packages
     'crispy_forms',
     'crispy_bootstrap5',
-    'crispy_bootstrap5.bootstrap5',
-
+    'Crypto',
+    'pytesseract',
 
     # Project App
     'app.MedicalImageApp',

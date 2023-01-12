@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block home %}
+    {% if  user.is_superuser %}
+        <div class="Container">
+            <div class="header">
+                <img src="{% static 'img/AdminProfile.png' %}" alt="profile">
+                <div>
+                    <div class="HeaderButton" ><a href="{% url 'Medical-Image-App:add_account' %}">Add Account</a></div>
+                    <div class="HeaderButton"><a href="{% url 'Medical-Image-App:add_user' %}">Add User</a></div>
+                </div>
+            </div>
+            <h1 class="listTitle">Doctors List</h1>
+            {% for doctor in doctors %}
+                <div class="ListItem">{{ doctor }}</div>
+                <br>
+            {% endfor %}
+        </div>
+        <div class="Container">
+            <h1 class="listTitle">Patients List</h1>
+            {% for patient in patients %}
+                <a class="ListItem" href="{% url 'Medical-Image-App:patient-detail' pk=patient.pk %}"
+                   style="text-decoration: none;">
+                    {{ patient }}
+                </a>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="Container">
+            <div class="header">
+                <img src="{% static 'img/profile.png' %}" alt="profile">
+                <button class="HeaderButton">
+                    <a href="{% url 'Medical-Image-App:add_record' %}" style="color: aliceblue; text-decoration: none">
+                        Add Record
+                    </a>
+                </button>
+            </div>
+            <h1 class="listTitle">Patients List</h1>
+            {% for patient in patients %}
+                <a class="ListItem" href="{% url 'Medical-Image-App:patient-detail' pk=patient.pk %}"
+                   style="text-decoration: none;">
+                    {{ patient }}
+                </a>
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endblock %}

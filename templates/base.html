@@ -13,22 +13,30 @@
             crossorigin="anonymous"></script>
 
     <!------link css file-------->
-    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <title>Medical Image WebSite</title>
 </head>
 <body>
-{% if 'login' in request.path %}
-    <div class="container d-flex justify-content-center login-block pt-5">
-        {% block login %}
+{% block login %}
 
-        {% endblock %}
-    </div>
-{% else %}
-    <nav class="nav">
-        <img src="../staticfiles/media/doctor.svg" alt="photo" class="rounded-circle image">
-        <a class="nav-link active" aria-current="page" href="#">Active</a>
-    </nav>
-{% endif %}
+{% endblock %}
 
+{% block home %}
+
+{% endblock %}
+
+{% block detailes %}
+
+{% endblock %}
+{% block new_record %}
+
+{% endblock %}
+{% block add_user %}
+
+{% endblock %}
+{% block add_account %}
+
+{% endblock %}
+<footer></footer>
 </body>
 </html>

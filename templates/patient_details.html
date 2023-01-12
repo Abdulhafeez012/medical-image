@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block detailes %}
+    <div class="Container">
+        {% if not user.is_superuser %}
+            <div class="header">
+                <img src="{% static 'img/profile.png' %}" alt="profile">
+                <div class="PageTitle">Patient Details Page</div>
+            </div>
+            {% for id,first_name,middle_name,last_name,gender,birth_date in patient %}
+                <div class="ListItem NoHover">Patient
+                    Name: {{ first_name }} {{ middle_name }} {{ last_name }}</div>
+                <div class="ListItem NoHover">Patient ID: {{ id }}</div>
+                <div class="ListItem NoHover">Birth Date: {{ birth_date }}</div>
+                <div class="ListItem NoHover">Patient Gender: {{ gender }}</div>
+                <div class="ListItem NoHover MedicalContainer">
+                    {% for description,image in medical_image %}
+                        <p>{{ description }}</p>
+                        <img src="{% static 'media/'|add:image %}" alt="MedicalImg">
+                    {% endfor %}
+                </div>
+
+            {% endfor %}
+        {% else %}
+            <div class="header">
+                <img src="{% static 'img/AdminProfile.png' %}" alt="profile">
+                <div class="PageTitle">Patient Details Page</div>
+            </div>
+            {% for id,first_name,middle_name,last_name,gender,birth_date in patient %}
+                <div class="ListItem NoHover">Patient Name: {{ first_name }} {{ middle_name }} {{ last_name }}</div>
+                <div class="ListItem NoHover">Patient ID: {{ id }}</div>
+                <div class="ListItem NoHover">Birth Date: {{ birth_date}}</div>
+                <div class="ListItem NoHover">Patient Gender: {{ gender }}</div>
+                <div class="ListItem NoHover">Assigned Doctor: {{ doctor }}</div>
+            {% endfor %}
+        {% endif %}
+    </div>
+{% endblock %}
